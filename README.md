@@ -3,314 +3,263 @@
 
 ## Input validation
 
-- [ ]   Conduct all input validation on a trusted system (server side, not client side)
+- [ ]   Conduct all input validation on a trusted system. (server side, not client side)
 
-- [ ]   Identify all data sources and classify them into trusted and untrusted
+- [ ]   Identify all data sources and classify them into trusted and untrusted.
 
-- [ ]   Validate all data from untrusted sources (databases, file streams, etc)
+- [ ]   Validate all data from untrusted sources. (databases, file streams, etc)
 
-- [ ]   Use a centralized input validation routine for the whole application
+- [ ]   Use a centralized input validation routine for the whole application.
 
-- [ ]   Specify character sets, such as UTF-8, for all input sources (canonicalization)
+- [ ]   Specify character sets, such as UTF-8, for all input sources. (canonicalization)
 
-- [ ]   Encode input to a common character set before validating
+- [ ]   Encode input to a common character set before validating.
 
-- [ ]   All validation failures should result in input rejection
+- [ ]   All validation failures should result in input rejection.
 
-- [ ]   If the system supports UTF-8 extended character sets and validates after UTF-8 decoding is completed
+- [ ]   If the system supports UTF-8 extended character sets and validates after UTF-8 decoding is completed.
 
-- [ ]   Validate all client-provided data before processing
+- [ ]   Validate all client-provided data before processing.
 
-- [ ]   Verify that protocol header values in both requests and responses contain only ASCII characters
+- [ ]   Verify that protocol header values in both requests and responses contain only ASCII characters.
 
-- [ ]   Validate data from redirects
+- [ ]   Validate data from redirects.
 
-- [ ]   Validate for expected data types using an \"allow\" list rather than a \"deny\" list
+- [ ]   Validate for expected data types using an \"allow\" list rather than a \"deny\" list.
 
-- [ ]   Validate data range
+- [ ]   Validate data range.
 
-- [ ]   Validate data length
+- [ ]   Validate data length.
 
-- [ ]   If any potentially hazardous input must be allowed then implement additional controls
+- [ ]   If any potentially hazardous input must be allowed then implement additional controls.
 
-- [ ]   If the standard validation routine cannot address some inputs then use extra discrete checks
+- [ ]   If the standard validation routine cannot address some inputs then use extra discrete checks.
 
-- [ ]   Utilize canonicalization to address obfuscation attacks
+- [ ]   Utilize canonicalization to address obfuscation attacks.
 
-## Output encoding
+## Output Encoding
 
-- [ ]   Conduct all output encoding on a trusted system (server side not client side)
+- [ ]   Conduct all output encoding on a trusted system. (server side, not client side)
 
-- [ ]   Utilize a standard, tested routine for each type of outbound encoding
+- [ ]   Utilize a standard, tested routine for each type of outbound encoding.
 
-- [ ]   Specify character sets, such as UTF-8, for all outputs
+- [ ]   Specify character sets, such as UTF-8, for all outputs.
 
-- [ ]   Contextually output encode all data returned to the client from untrusted sources
+- [ ]   Contextually output encodes all data returned to the client from untrusted sources.
 
-- [ ]   Ensure the output encoding is safe for all target systems
+- [ ]   Ensure the output encoding is safe for all target systems.
 
-- [ ]   Contextually sanitize all output of un-trusted data to queries for SQL, XML, and LDAP
+- [ ]   Contextually sanitize all output of un-trusted data to queries for SQL, XML, and LDAP.
 
-- [ ]   Sanitize all output of untrusted data to operating system commands
+- [ ]   Sanitize all output of untrusted data to operating system commands.
 
-## Authentication and password management
+## Authentication and Password Management
 
-- [ ]   Require authentication for all pages and resources, except those
-    specifically intended to be public
+- [ ]   Require authentication for all pages and resources, except those specifically intended to be public.
 
-- [ ]   All authentication controls must be enforced on a trusted system
+- [ ]   All authentication controls must be enforced on a trusted system.
 
-- [ ]   Establish and utilize standard, tested, authentication services whenever possible
+- [ ]   Establish and utilize standard, tested, authentication services whenever possible.
 
-- [ ]   Use a centralized implementation for all authentication controls,
-    including libraries that call external authentication services
+- [ ]   Use a centralized implementation for all authentication controls, including libraries that call external authentication services.
 
-- [ ]   Segregate authentication logic from the resource being requested and
-    use redirection to and from the centralized authentication control
+- [ ]   Segregate authentication logic from the resource being requested and use redirection to and from the centralized authentication control.
 
-- [ ]   All authentication controls should fail securely
+- [ ]   All authentication controls should fail securely.
 
-- [ ]   All administrative and account management functions must be at least
-    as secure as the primary authentication mechanism
+- [ ]   All administrative and account management functions must be at least as secure as the primary authentication mechanism.
 
-- [ ]   If your application manages a credential store, use cryptographically strong one-way salted hashes
+- [ ]   If your application manages a credential store, use cryptographically strong one-way salted hashes.
 
-- [ ]   Password hashing must be implemented on a trusted system server side not client side)
+- [ ]   Password hashing must be implemented on a trusted system server side, not the client side.
 
-- [ ]   Validate the authentication data only on completion of all data input
+- [ ]   Validate the authentication data only on completion of all data input.
 
-- [ ]   Authentication failure responses should not indicate which part of the authentication data was incorrect
+- [ ]   Authentication failure responses should not indicate which part of the authentication data was incorrect.
 
-- [ ]   Utilize authentication for connections to external systems that involve sensitive information or functions
+- [ ]   Utilize authentication for connections to external systems that involve sensitive information or functions.
 
-- [ ]   Authentication credentials for accessing services external to the
-    application should be stored in a secure store
+- [ ]   Authentication credentials for accessing services external to the application should be stored in a secure store.
 
-- [ ]   Use only HTTP POST requests to transmit authentication credentials
+- [ ]   Use only HTTP POST requests to transmit authentication credentials.
 
-- [ ]   Only send non-temporary passwords over an encrypted connection or as encrypted data
+- [ ]   Only send non-temporary passwords over an encrypted connection or as encrypted data.
 
-- [ ]   Enforce password complexity requirements established by policy or regulation
+- [ ]   Enforce password complexity requirements established by policy or regulation.
 
-- [ ]   Enforce password length requirements established by policy or regulation
+- [ ]   Enforce password length requirements established by policy or regulation.
 
-- [ ]   Password entry should be obscured on the user\'s screen
+- [ ]   Password entry should be obscured on the user\'s screen.
 
-- [ ]   Enforce account disabling after an established number of invalid login attempts
+- [ ]   Enforce account disabling after an established number of invalid login attempts.
 
-- [ ]   Password reset and changing operations require the same level of
-    controls as account creation and authentication
+- [ ]   Password reset and changing operations require the same level of controls such as account creation and authentication.
 
-- [ ]   Password reset questions should support sufficiently random answers
+- [ ]   Password reset questions should support sufficiently random answers.
 
-- [ ]   If using email based resets, only send email to a pre-registered
-    address with a temporary link/password
+- [ ]   If using email-based resets, only send email to a pre-registered address with a temporary link/password.
 
-- [ ]   Temporary passwords and links should have a short expiration time
+- [ ]   Temporary passwords and links should have a short expiration time.
 
-- [ ]   Enforce the changing of temporary passwords on the next use
+- [ ]   Enforce the changing of temporary passwords on the next use.
 
-- [ ]   Notify users when a password reset occurs
+- [ ]   Notify users when a password reset occurs.
 
-- [ ]   Prevent password re-use
+- [ ]   Prevent password re-use.
 
-- [ ]   Passwords should be at least one day old before they can be changed,
-    to prevent attacks on password re-use
+- [ ]   Passwords should be at least one day old before they can be changed, to prevent attacks on password re-use.
 
-- [ ]   Enforce password changes based on requirements established in policy
-    or regulation, with the time between resets administratively controlled
+- [ ]   Enforce password changes based on requirements established in policy or regulation, with the time between resets administratively controlled.
 
-- [ ]   Disable \"remember me\" functionality for password fields
+- [ ]   Disable \"remember me\" functionality for password fields.
 
-- [ ]   The last use (successful or unsuccessful) of a user account should
-    be reported to the user at their next successful login
+- [ ]   The last use (successful or unsuccessful) of a user account should be reported to the user at their next successful login.
 
-- [ ]   Implement monitoring to identify attacks against multiple user accounts, utilizing the same password
+- [ ]   Implement monitoring to identify attacks against multiple user accounts, utilizing the same password.
 
-- [ ]   Change all vendor-supplied default passwords and user IDs or disable the associated accounts
+- [ ]   Change all vendor-supplied default passwords and user IDs or disable the associated accounts.
 
-- [ ]   Re-authenticate users prior to performing critical operations
+- [ ]   Re-authenticate users before performing critical operations.
 
-- [ ]   Use Multi-Factor Authentication for highly sensitive or high value transactional accounts
+- [ ]   Use Multi-Factor Authentication for highly sensitive or high-value transactional accounts.
 
-- [ ]   If using third party code for authentication, inspect the code
-    carefully to ensure it is not affected by any malicious code
+- [ ]   If using third-party code for authentication, inspect the code carefully to ensure it is not affected by any malicious code.
 
-## Session management
+## Session Management
 
-- [ ]   Use the server or framework's session management controls. The
-    application should recognize only these session identifiers as
-    valid
+- [ ]   Use the server or framework's session management controls. The application should recognize only these session identifiers as valid.
 
-- [ ]   Session identifier creation must always be done on a trusted system (server side not client side)
+- [ ]   Session identifier creation must always be done on a trusted system. (server side, not client side)
 
-- [ ]   Session management controls should use well vetted algorithms that
-    ensure sufficiently random session identifiers
+- [ ]   Session management controls should use well-vetted algorithms that ensure sufficiently random session identifiers.
 
-- [ ]   Set the domain and path for cookies containing authenticated session
-    identifiers to an appropriately restricted value for the site
+- [ ]   Set the domain and path for cookies containing authenticated session identifiers to an appropriately restricted value for the site.
 
-- [ ]   Logout functionality should fully terminate the associated session or connection
+- [ ]   Logout functionality should fully terminate the associated session or connection.
 
-- [ ]   Logout functionality should be available from all pages protected by authorization
+- [ ]   Logout functionality should be available from all pages protected by authorization.
 
-- [ ]   Establish a session inactivity timeout that is as short as possible,
-    based on balancing risk and business functional requirements
+- [ ]   Establish a session inactivity timeout that is as short as possible, based on balancing risk and business functional requirements.
 
-- [ ]   Disallow persistent logins and enforce periodic session
-    terminations, even when the session is active
+- [ ]   Disallow persistent logins and enforce periodic session terminations, even when the session is active.
 
-- [ ]   If a session was established before login, close that session and
-    establish a new session after a successful login
+- [ ]   If a session was established before login, close that session and establish a new session after a successful login.
 
-- [ ]   Generate a new session identifier on any re-authentication
+- [ ]   Generate a new session identifier on any re-authentication.
 
-- [ ]   Do not allow concurrent logins with the same user ID
+- [ ]   Do not allow concurrent logins with the same user ID.
 
-- [ ]   Do not expose session identifiers in URLs, error messages or logs
+- [ ]   Do not expose session identifiers in URLs, error messages or logs.
 
-- [ ]   Implement appropriate access controls to protect server side session data
-    from unauthorized access from other users of the server
+- [ ]   Implement appropriate access controls to protect server-side session data from unauthorized access from other users of the server.
 
-- [ ]   Generate a new session identifier and deactivate the old one periodically
+- [ ]   Generate a new session identifier and deactivate the old one periodically.
 
-- [ ]   Generate a new session identifier if the connection security changes
-    from HTTP to HTTPS, as can occur during authentication
+- [ ]   Generate a new session identifier if the connection security changes from HTTP to HTTPS, as can occur during authentication.
     
-- [ ]   Consistently utilize HTTPS rather than switching between HTTP to HTTPS
+- [ ]   Consistently utilize HTTPS rather than switching between HTTP to HTTPS.
 
-- [ ]   Supplement standard session management for sensitive server-side
-    operations, like account management, by utilizing per-session
-    strong random tokens or parameters
+- [ ]   Supplement standard session management for sensitive server-side operations, like account management, by utilizing per-session strong random tokens or parameters.
 
-- [ ]   Supplement standard session management for highly sensitive or
-    critical operations by utilizing per-request, as opposed to
-    per-session, strong random tokens or parameters
+- [ ]   Supplement standard session management for highly sensitive or critical operations by utilizing per-request, as opposed to per-session, strong random tokens or parameters.
 
-- [ ]   Set the \"secure\" attribute for cookies transmitted over an TLS connection
+- [ ]   Set the \"secure\" attribute for cookies transmitted over a TLS connection.
 
-- [ ]   Set cookies with the HttpOnly attribute, unless you specifically
-    require client-side scripts within your application to read or set
-    a cookie\'s value
+- [ ]   Set cookies with the HttpOnly attribute, unless you specifically require client-side scripts within your application to read or set a cookie\'s value.
 
-## Access control
+## Access Control
 
-- [ ]   Use only trusted system objects, e.g. server side session objects,
-    for making access authorization decisions
+- [ ]   Use only trusted system objects, e.g. server-side session objects, for making access authorization decisions.
 
-- [ ]   Use a single site-wide component to check access authorization. This
-    includes libraries that call external authorization services
+- [ ]   Use a single site-wide component to check access authorization. This includes libraries that call external authorization services.
 
-- [ ]   Access controls should fail securely
+- [ ]   Access controls should fail securely.
 
-- [ ]   Deny all access if the application cannot access its security
-    configuration information
+- [ ]   Deny all access if the application cannot access its security configuration information.
 
-- [ ]   Enforce authorization controls on every request, including those made by server side scripts
+- [ ]   Enforce authorization controls on every request, including those made by server-side scripts.
 
-- [ ]   Segregate privileged logic from other application code
+- [ ]   Segregate privileged logic from other application code.
 
-- [ ]   Restrict access to files or other resources, including those outside
-    the application\'s direct control, to only authorized users
+- [ ]   Restrict access to files or other resources, including those outside the application\'s direct control, to only authorized users.
 
-- [ ]   Restrict access to protected URLs to only authorized users
+- [ ]   Restrict access to protected URLs to only authorized users.
 
-- [ ]   Restrict access to protected functions to only authorized users
+- [ ]   Restrict access to protected functions to only authorized users.
 
-- [ ]   Restrict direct object references to only authorized users
+- [ ]   Restrict direct object references to only authorized users.
 
-- [ ]   Restrict access to services to only authorized users
+- [ ]   Restrict access to services to only authorized users.
 
-- [ ]   Restrict access to application data to only authorized users
+- [ ]   Restrict access to application data to only authorized users.
 
-- [ ]   Restrict access to user and data attributes and policy information used by access controls
+- [ ]   Restrict access to user and data attributes and policy information used by access controls.
 
-- [ ]   Restrict access security-relevant configuration information to only authorized users
+- [ ]   Restrict access to security-relevant configuration information to only authorized users.
 
-- [ ]   Server side implementation and presentation layer representations of access control rules must match
+- [ ]   Server-side implementation and presentation layer representations of access control rules must match.
 
-- [ ]   If state data must be stored on the client, use encryption and integrity checking on the server side
-    to detect state tampering
+- [ ]   If state data must be stored on the client, use encryption and integrity checking on the server side to detect state tampering.
 
-- [ ]   Enforce application logic flows to comply with business rules
+- [ ]   Enforce application logic flows to comply with business rules.
 
-- [ ]   Limit the number of transactions a single user or device can perform
-    in a given period of time, low enough to deter automated attacks
-    but above the actual business requirement
+- [ ]   Limit the number of transactions a single user or device can perform in a given time, low enough to deter automated attacks but above the actual business requirement.
 
-- [ ]   Use the \"referer\" header as a supplemental check only, it should
-    never be the sole authorization check as it is can be spoofed
+- [ ]   Use the \"referer\" header as a supplemental check only, it should never be the sole authorization check as it can be spoofed.
 
-- [ ]   If long authenticated sessions are allowed, periodically re-validate
-    a user's authorization to ensure that their privileges have not
-    changed and if they have, log the user out and force them to
-    re-authenticate
+- [ ]   If long authenticated sessions are allowed, periodically re-validate a user's authorization to ensure that their privileges have not changed and if they have, log the user out and force them to re-authenticate.
 
-- [ ]   Implement account auditing and enforce the disabling of unused accounts
+- [ ]   Implement account auditing and enforce the disabling of unused accounts.
 
-- [ ]   The application must support disabling of accounts
-    and terminating sessions when authorization ceases
+- [ ]   The application must support disabling accounts and terminating sessions when authorization ceases.
 
-- [ ]   Service accounts or accounts supporting connections to or from
-    external systems should have the least privilege possible
+- [ ]   Service accounts or accounts supporting connections to or from external systems should have the least privilege possible.
 
-- [ ]   Create an Access Control Policy to document an application\'s
-    business rules, data types and access authorization criteria
-    and/or processes so that access can be properly provisioned and
-    controlled. This includes identifying access requirements for both
-    the data and system resources
+- [ ]   Create an Access Control Policy to document an application\'s business rules, data types and access authorization criteria and/or processes so that access can be properly provisioned and controlled. This includes identifying access requirements for both the data and system resources.
 
-## Cryptographic practices
+## Cryptographic Practices
 
-- [ ]   All cryptographic functions used to protect secrets from the
-    application user must be implemented on a trusted system
+- [ ]   All cryptographic functions used to protect secrets from the application user must be implemented on a trusted system.
 
-- [ ]   Protect secrets from unauthorized access
+- [ ]   Protect secrets from unauthorized access.
 
-- [ ]   Cryptographic modules should fail securely
+- [ ]   Cryptographic modules should fail securely.
 
-- [ ]   All random numbers, random file names, random GUIDs, and random
-    strings should be generated using the cryptographic module's
-    approved random number generator
+- [ ]   All random numbers, random file names, random GUIDs, and random strings should be generated using the cryptographic module's approved random number generator.
 
-- [ ]   Cryptographic modules used by the application should be compliant to
-    FIPS 140-2 or an equivalent standard
+- [ ]   Cryptographic modules used by the application should be compliant to FIPS 140-2 or an equivalent standard.
 
-- [ ]   Establish and utilize a policy and process for how cryptographic
-    keys will be managed
+- [ ]   Establish and utilize a policy and process for how cryptographic keys will be managed.
 
-## Error handling and logging
+## Error Handling and Logging
 
-- [ ]   Do not disclose sensitive information in error responses, including
-    system details, session identifiers or account information
+- [ ]   Do not disclose sensitive information in error responses, including system details, session identifiers or account information.
 
-- [ ]   Use error handlers that do not display debugging or stack trace information
+- [ ]   Use error handlers that do not display debugging or stack trace information.
 
-- [ ]   Implement generic error messages and use custom error pages
+- [ ]   Implement generic error messages and use custom error pages.
 
-- [ ]   The application should handle application errors and not rely on the server configuration
+- [ ]   The application should handle application errors and not rely on the server configuration.
 
-- [ ]   Properly free allocated memory when error conditions occur
+- [ ]   Properly free allocated memory when error conditions occur.
 
-- [ ]   Error handling logic associated with security controls should deny access by default
+- [ ]   Error handling logic associated with security controls should deny access by default.
 
-- [ ]   All logging controls should be implemented on a trusted system
+- [ ]   All logging controls should be implemented on a trusted system.
 
-- [ ]   Logging controls should support both success and failure of specified security events
+- [ ]   Logging controls should support both the success and failure of specified security events.
 
-- [ ]   Ensure logs contain important log event data
+- [ ]   Ensure logs contain important log event data.
 
-- [ ]   Ensure log entries that include un-trusted data will not execute as
-    code in the intended log viewing interface or software
+- [ ]   Ensure log entries that include un-trusted data will not execute as code in the intended log viewing interface or software.
 
-- [ ]   Restrict access to logs to only authorized individuals
+- [ ]   Restrict access to logs to only authorized individuals.
 
-- [ ]   Utilize a central routine for all logging operations
+- [ ]   Utilize a central routine for all logging operations.
 
-- [ ]   Do not store sensitive information in logs, including unnecessary
-    system details, session identifiers or passwords
+- [ ]   Do not store sensitive information in logs, including unnecessary system details, session identifiers or passwords.
 
-- [ ]   Ensure that a mechanism exists to conduct log analysis
+- [ ]   Ensure that a mechanism exists to conduct log analysis.
 
 - [ ]   Log all input validation failures.
 
@@ -394,7 +343,7 @@
 
 - [ ]   Prevent disclosure of your directory structure in the robots.txt file by placing directories not intended for public indexing into an isolated parent directory.
 
-- [ ]   Define which HTTP methods, Get or Post, the application will support and whether it will be handled differently in different pages in the application.
+- [ ]   Define which HTTP methods, Get or Post, the application will support and whether it will be handled differently on different pages in the application.
 
 - [ ]   Disable unnecessary HTTP methods.
 
