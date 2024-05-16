@@ -464,3 +464,7 @@
 - [ ]   Review all secondary applications, third-party code and libraries to determine the business necessity and validate safe functionality.
 
 - [ ]   Implement safe updating using encrypted channels.
+
+## Reference
+
+- [OWASP Secure Coding Practices](https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/stable-en/02-checklist/05-checklist.html)
